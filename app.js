@@ -40,21 +40,27 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   message: 'Too Many requests.Please try again after one hour',
 });
- app.use(helmet());
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: {
-//       directives: {
-//         'default-src': ['*'],
-//         'script-src': [
-//          'https://js.stripe.com/v3/'
-        
-//         ],
-//         // 'style-src': ['self', 'https://fonts.googleapis.com', 'unsafe-inline'],
-//       },
-//     },
-//   })
-// );
+ //app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        'default-src': ['*'],
+        'script-src': [
+         'https://js.stripe.com/v3/',
+          'https://natours-first.onrender.com/',
+          'https://natours-first.onrender.com/js/alert.js',
+           'https://natours-first.onrender.com/js/axios.js',
+          'https://natours-first.onrender.com/js/login.js',
+          'https://natours-first.onrender.com/js/mapbox.js',
+           'https://natours-first.onrender.com/js/stripe.js',
+          'https://natours-first.onrender.com/js/updateSettings.js'
+        ],
+        // 'style-src': ['self', 'https://fonts.googleapis.com', 'unsafe-inline'],
+      },
+    },
+  })
+);
 app.use('/api', limiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
