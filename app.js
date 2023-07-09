@@ -47,12 +47,12 @@ app.use(
       directives: {
         'default-src': ['*'],
         'script-src': [
-          'http://127.0.0.1:3000/js/axios.js',
-          'http://127.0.0.1:3000/js/mapbox.js',
-          'http://127.0.0.1:3000/js/login.js',
-          'http://127.0.0.1:3000/js/updateSettings.js',
+          '/js/axios.js',
+          '/js/mapbox.js',
+          '/js/login.js',
+          '/js/updateSettings.js',
           'https://js.stripe.com/v3/',
-          'http://127.0.0.1:3000/js/stripe.js',
+          '/js/stripe.js',
         ],
         // 'style-src': ['self', 'https://fonts.googleapis.com', 'unsafe-inline'],
       },
