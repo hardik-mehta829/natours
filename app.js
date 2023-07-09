@@ -40,7 +40,7 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   message: 'Too Many requests.Please try again after one hour',
 });
-// app.use(helmet());
+ app.use(helmet());
 // app.use(
 //   helmet({
 //     contentSecurityPolicy: {
