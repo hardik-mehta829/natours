@@ -41,20 +41,20 @@ const limiter = rateLimit({
   message: 'Too Many requests.Please try again after one hour',
 });
 // app.use(helmet());
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        'default-src': ['*'],
-        'script-src': [
-         'https://js.stripe.com/v3/'
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: {
+//       directives: {
+//         'default-src': ['*'],
+//         'script-src': [
+//          'https://js.stripe.com/v3/'
         
-        ],
-        // 'style-src': ['self', 'https://fonts.googleapis.com', 'unsafe-inline'],
-      },
-    },
-  })
-);
+//         ],
+//         // 'style-src': ['self', 'https://fonts.googleapis.com', 'unsafe-inline'],
+//       },
+//     },
+//   })
+// );
 app.use('/api', limiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
