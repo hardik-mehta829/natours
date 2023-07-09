@@ -47,12 +47,8 @@ app.use(
       directives: {
         'default-src': ['*'],
         'script-src': [
-          '/js/axios.js',
-          '/js/mapbox.js',
-          '/js/login.js',
-          '/js/updateSettings.js',
-          'https://js.stripe.com/v3/',
-          '/js/stripe.js',
+         'https://js.stripe.com/v3/'
+        
         ],
         // 'style-src': ['self', 'https://fonts.googleapis.com', 'unsafe-inline'],
       },
